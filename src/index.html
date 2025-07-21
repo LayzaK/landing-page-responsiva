@@ -1,0 +1,284 @@
+<index.html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>20 Maneiras de Fazer R$1.000 em 7 Dias</title>
+  <style>
+    :root {
+      --roxo: #6a00ff;
+      --azul: #0077ff;
+      --laranja: #ff6a00;
+      --fundo: #f5f5f5;
+      --texto: #222;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--fundo);
+      color: var(--texto);
+      padding: 0 1rem;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+      background: linear-gradient(to right, var(--roxo), var(--azul));
+      color: #fff;
+      border-radius: 0 0 16px 16px;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      background-color: var(--laranja);
+      color: #fff;
+      padding: 0.8rem 1.2rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #e85c00;
+    }
+
+    nav {
+      display: flex;
+      overflow-x: auto;
+      gap: 0.5rem;
+      padding: 1rem 0;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 99;
+    }
+
+    nav button {
+      background: var(--roxo);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    nav button:hover {
+      background: var(--azul);
+    }
+
+    .progresso {
+      margin: 1rem 0;
+      background: #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 20px;
+    }
+
+    .progresso-barra {
+      height: 100%;
+      background: var(--laranja);
+      width: 0%;
+      text-align: center;
+      color: #fff;
+      font-size: 0.8rem;
+      transition: width 0.5s ease-in-out;
+    }
+
+    section {
+      margin-top: 2rem;
+    }
+
+    .dia {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .dia h2 {
+      color: var(--roxo);
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .ideia {
+      margin: 1rem 0;
+    }
+
+    .ideia h3::before {
+      content: "💡 ";
+    }
+
+    .acao {
+      background-color: var(--azul);
+      color: #fff;
+      padding: 0.5rem 0.8rem;
+      border-radius: 6px;
+      display: inline-block;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      margin: 3rem 0 2rem;
+    }
+
+    footer p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    footer .btn-compartilhar {
+      background: var(--roxo);
+      padding: 0.7rem 1rem;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media (min-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .dia h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Descubra 20 Maneiras de Ganhar R$1.000 em 7 Dias Sem Sair de Casa</h1>
+    <p>Dicas práticas, testadas e acessíveis para quem precisa de renda extra urgente</p>
+    <button class="btn" onclick="mostrarDia(1)">COMEÇAR AGORA</button>
+  </header>
+
+  <nav>
+    <button onclick="mostrarDia(1)">Dia 1</button>
+    <button onclick="mostrarDia(2)">Dia 2</button>
+    <button onclick="mostrarDia(3)">Dia 3</button>
+    <button onclick="mostrarDia(4)">Dia 4</button>
+    <button onclick="mostrarDia(5)">Dia 5</button>
+    <button onclick="mostrarDia(6)">Dia 6</button>
+    <button onclick="mostrarDia(7)">Dia 7</button>
+  </nav>
+
+  <div class="progresso">
+    <div class="progresso-barra" id="barraProgresso">0%</div>
+  </div>
+
+  <section id="dias">
+    <!-- Gerado por JS -->
+  </section>
+
+  <footer>
+    <p>Você está mais perto do que imagina de fazer seus primeiros R$1.000!</p>
+    <div class="btn-compartilhar">🔗 Compartilhar com um amigo</div>
+    <p style="margin-top: 1rem; font-size: 0.8rem;">Este conteúdo foi criado para fins educacionais</p>
+  </footer>
+
+  <script>
+    const ideiasPorDia = {
+      1: [
+        ["Venda objetos usados", "Separe roupas, eletrônicos ou utensílios que não usa mais e anuncie no OLX, Facebook Marketplace ou grupos locais."],
+        ["Ofereça serviços de limpeza", "Você pode ganhar por diária limpando casas, apartamentos ou escritórios na vizinhança."],
+        ["Dog walker ou pet sitter", "Se ofereça para passear com cachorros ou cuidar de pets enquanto os donos trabalham ou viajam."]
+      ],
+      2: [
+        ["Venda de doces caseiros", "Faça brigadeiros, brownies ou bolos e venda na sua rua ou para conhecidos."],
+        ["Digitador freelancer", "Ofereça serviços simples como digitação de documentos ou trabalhos acadêmicos."],
+        ["Montagem de móveis", "Ajude vizinhos com montagem de móveis e cobre por serviço."]
+      ],
+      3: [
+        ["Revenda de produtos", "Compre produtos no atacado ou em promoções e revenda online com lucro."],
+        ["Serviços de jardinagem", "Pode cobrar por cortar grama, podar plantas ou manter jardins residenciais."],
+        ["Babá por dia", "Se ofereça para cuidar de crianças por períodos curtos."]
+      ],
+      4: [
+        ["Aulas particulares", "Se tem conhecimento escolar, ensine matemática, português ou inglês para alunos."],
+        ["Digitação de currículos", "Ajude pessoas a formatar e digitar seus currículos corretamente."],
+        ["Alugue algo que você tem", "Pode ser uma furadeira, uma bicicleta ou até uma churrasqueira."]
+      ],
+      5: [
+        ["Venda de artesanato", "Crie pulseiras, quadros ou decorações e ofereça pelo WhatsApp ou grupos locais."],
+        ["Ajuda com tecnologia", "Instale apps, resolva problemas de celular ou computador para pessoas mais velhas."],
+        ["Cuidar de idosos", "Ofereça companhia, ajuda com tarefas ou passeios rápidos."]
+      ],
+      6: [
+        ["Lavagem de carros", "Use materiais simples para oferecer lavagem rápida na porta das casas."],
+        ["Criação de conteúdos simples", "Ofereça criação de posts para pequenos comércios locais."],
+        ["Divulgar produtos como afiliado", "Crie uma conta no Hotmart e divulgue links em grupos para comissões."]
+      ],
+      7: [
+        ["Organização de ambientes", "Ajude vizinhos a organizarem armários, despensas, etc."],
+        ["Compra e entrega de mercado", "Faça compras para pessoas que não querem ou não podem sair."],
+        ["Montagem de kits e cestas", "Monte kits de café da manhã ou presentes e venda por encomenda."]
+      ]
+    };
+
+    const diasContainer = document.getElementById('dias');
+    const barra = document.getElementById('barraProgresso');
+    let diasVistos = [];
+
+    function mostrarDia(dia) {
+      if (!diasVistos.includes(dia)) diasVistos.push(dia);
+      atualizarBarra();
+
+      diasContainer.innerHTML = `
+        <div class="dia" id="dia${dia}">
+          <h2>Dia ${dia}</h2>
+          <p>Hoje é o dia de agir! Escolha uma das ideias abaixo e coloque em prática.</p>
+          ${ideiasPorDia[dia].map(ideia => `
+            <div class="ideia">
+              <h3>${ideia[0]}</h3>
+              <p>${ideia[1]}</p>
+              <div class="acao">✅ Ação do Dia</div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    function atualizarBarra() {
+      const perc = Math.floor((diasVistos.length / 7) * 100);
+      barra.style.width = perc + "%";
+      barra.textContent = `Você viu ${diasVistos.length} de 7 dias`;
+    }
+  </script>
+
+</body>
+</html>
